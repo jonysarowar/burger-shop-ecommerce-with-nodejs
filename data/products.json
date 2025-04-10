@@ -1,0 +1,51 @@
+[
+  {
+    "id": "PROD_1",
+    "product_title": "Perfect Classic Cheeseburger",
+    "product_price": "400",
+    "product_description": "Homemade signature bun, single beef patty, melted cheddar cheese, pickles and signature sauce",
+    "image_path": "/uploads/product-1740132342853.png"
+  },
+  {
+    "id": "PROD_2",
+    "product_title": "Truffle-Shuffle",
+    "product_price": "600",
+    "product_description": "Homemade signature bun, beef patty, melted cheddar cheese, caramelized onions, sauteed mushrooms and truffle sauce",
+    "image_path": "/uploads/product-1740132410781.png"
+  },
+  {
+    "id": "PROD_1714367009230_540",
+    "product_title": "Double Cheeseburger",
+    "product_price": "550",
+    "product_description": "Homemade signature bun, double beef patty, double melted cheddar cheese, pickles, signature sauce",
+    "image_path": "/uploads/product-1740132471025.png"
+  },
+  {
+    "id": "PROD_1714367464554_841",
+    "product_title": "Loud Crispy Onion Burger",
+    "product_price": "480",
+    "product_description": "Homemade signature bun, single beef patty, melted cheddar cheese, crispy onion, BBQ sauce, mayo",
+    "image_path": "/uploads/product-1740250699271.png"
+  },
+  {
+    "id": "PROD_1714372688739_780",
+    "product_title": "Double Truffle-Shuffle",
+    "product_price": "700",
+    "product_description": "Homemade signature bun, double beef patty, melted cheddar cheese, caramelized onions, sauteed mushrooms, truffle sauce",
+    "image_path": "/uploads/product-1740132564044.png"
+  },
+  {
+    "id": "PROD_1740241186267_196",
+    "product_title": "Chicken Crisp",
+    "product_price": "590",
+    "product_description": "you’ll get a yummyliciously crispy chicken fillet topped with garden-fresh lettuce and creamy mayo, served on a sesame seed bun.",
+    "image_path": "/uploads/product-1740246522191.png"
+  },
+  {
+    "id": "PROD_1740251327510_89",
+    "product_title": "Big King Burger",
+    "product_price": "799",
+    "product_description": "Burger features two savory flame-grilled beef patties, topped with melted cheese, fresh cut iceberg lettuce.",
+    "image_path": "/uploads/product-1740251649867.jpg"
+  }
+]

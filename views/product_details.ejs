@@ -1,0 +1,45 @@
+<%- include("layouts/header.ejs") %>
+
+<main>
+  <div class="product_details_section layout_padding">
+    <div class="contiainer">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1><%= product.product_title %></h1>
+          <div class="details_image">
+            <img
+              class="mycustomAnimat wow animated pulse"
+              src="<%= product.image_path %>"
+              alt="<%= product.product_title %>"
+            />
+          </div>
+          <p style="color: white; font-size: 20px">
+            <%= product.product_description %>
+          </p>
+          <p style="color: orange; font-weight: bold; font-size: 20px">
+            Price: <%= product.product_price %> TK
+          </p>
+          <div class="detailsAndBuyBtnContiainer">
+            <div class="detailsToShopBtn">
+              <a href="/menu">Go Menu</a>
+            </div>
+            <div>
+              <form action="/cart/add" method="POST" class="text-center">
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= product.id %>"
+                />
+                <button type="submit" class="btn btn-lg cusBuyBtn">
+                  Buy Now
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("layouts/footer.ejs") %>

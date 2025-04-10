@@ -1,0 +1,43 @@
+<%- include("../layouts/header.ejs") %>
+
+<main>
+  <div class="login_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
+          <div class="login-container text-center wow animated fadeInLeft">
+            <h2>Admin Login</h2>
+            <form action="/admin/login" method="POST">
+              <label for="username">Username:</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="Default Username: admin"
+                required
+              />
+
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Default Password: 12345"
+                required
+              />
+
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include("../layouts/footer.ejs") %>
+
+<!-- for userName or PassWord incorrect -->
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has("error")) {
+    alert("Username or Password is incorrect!");
+  }
+</script>

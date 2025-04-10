@@ -1,0 +1,322 @@
+<%- include("layouts/header.ejs") %>
+<main>
+  <button class="megBtnNobg" id="openChatButton">
+    <i
+      class="fa-brands fa-facebook-messenger mycustomAnimat wow animated pulse"
+    ></i>
+  </button>
+  <div class="chat-container" id="chatContainer" style="display: none">
+    <div class="message-container" id="messages"></div>
+
+    <div class="message">
+      <input
+        type="text"
+        placeholder="Write your message..."
+        id="messageInput"
+      />
+      <button id="sendMessageButton" onclick="sendMessage()">Send</button>
+    </div>
+    <button class="megBtnNobg" id="closeChatButton">
+      <i class="fa-solid fa-circle-xmark"></i>
+    </button>
+  </div>
+
+  <div class="video_section">
+    <div class="">
+      <div class="video-container">
+        <video autoplay loop muted playsinline>
+          <source src="/videos/burger.mp4" type="video/mp4" />
+        </video>
+        <div class="content col-sm-12 col-md-9 col-lg-7 mx-auto">
+          <div class="">
+            <div class="wow animated fadeInRight" data-wow-delay="5s">
+              <h1 class="banner_taital">
+                happy tummy with tasty
+                <span style="color: orange">burgers.</span>
+              </h1>
+              <p class="banner_text" style="text-align: center">
+                A burger is a delicious sandwich consisting of a grilled patty,
+                usually beef, placed in a bun with toppings like lettuce,
+                cheese, and sauces.
+              </p>
+            </div>
+            <div class="wow animated fadeInLeft" data-wow-delay="5s">
+              <div class="font_awesome_icon">
+                <div class="icon_text">
+                  <i class="fa-solid fa-utensils"></i><br />
+                  <span>Delicious</span>
+                </div>
+                <div class="icon_text">
+                  <i class="fa-solid fa-droplet"></i><br />
+                  <span>Fresh</span>
+                </div>
+                <div class="icon_text">
+                  <i class="fa-brands fa-envira"></i><br />
+                  <span>Organic</span>
+                </div>
+              </div>
+              <div class="buyAndRead_bt">
+                <div class="buy_bt myCusBuyBtn">
+                  <a href="#vegetables_section">Get Yours</a>
+                </div>
+                <div class="read_bt">
+                  <a href="#">Get Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--discount section start -->
+  <div class="discountSection">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dicountBox">
+            <div class="discountBoxContent first-box">
+              <img src="/images/burger10.png" alt="" />
+              <div class="disContent">
+                <h2>GET A 15% DISCOUNT ON FRIDAY WEEK</h2>
+                <P
+                  >"Friday Special! Enjoy an 15% discount on burgers, grab your
+                  delicious bite today!"</P
+                >
+                <span>
+                  <a href="/shop">Buy Online</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="dicountBox">
+            <div class="discountBoxContent second-box">
+              <img src="/images/snack-1.png" alt="" />
+              <div class="disContent">
+                <h2>GET A 8% DISCOUNT ON FRIDAY WEEK</h2>
+                <P
+                  >"Friday Special! Enjoy an 8% discount on burgers, grab your
+                  delicious bite today!"</P
+                >
+                <span>
+                  <a href="/shop">Buy Online</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="dicountBox">
+            <div class="discountBoxContent third-box">
+              <img src="/images/beverage-1.png" alt="" />
+              <div class="disContent">
+                <h2>GET A 10% DISCOUNT ON FRIDAY WEEK</h2>
+                <P
+                  >"Friday Special! Enjoy an 10% discount on burgers, grab your
+                  delicious bite today!"</P
+                >
+                <span>
+                  <a href="/shop">Buy Online</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about_section">
+    <div class="container">
+      <div class="image_2">
+        <i class="fa-solid fa-burger"></i>
+      </div>
+      <h1 class="about_taital">Welcome To Our Shop</h1>
+      <div class="image_3">
+        <img
+          class="mycustomAnimat wow animated pulse"
+          src="images/snack-3.png"
+        />
+      </div>
+      <p class="lorem_text">
+        A burger is a delicious sandwich consisting of a grilled patty, usually
+        beef, placed in a bun with toppings like lettuce, cheese, and sauces.
+      </p>
+      <div class="read_bt_1"><a href="#">Get Details</a></div>
+    </div>
+  </div>
+  <!--about section end -->
+
+  <!--our burgers section start -->
+  <div class="vegetables_section" id="vegetables_section">
+    <div class="container">
+      <div class="image_2">
+        <i class="fa-solid fa-burger"></i>
+      </div>
+      <h1 class="about_taital">Our Burgers</h1>
+      <p class="lorem_text">
+        Burgers originated from Hamburg, Germany, but became widely popular in
+        the United States.
+      </p>
+      <div class="vegetables_section_2 layout_padding">
+        <div class="row">
+          <% products.forEach(product => { %>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="box_section wow animated fadeInRight">
+              <div class="image_4">
+                <img src="<%= product.image_path %>" />
+              </div>
+              <h2 class="dolor_text"><%= product.product_price %> TK</h2>
+
+              <a href="/product/<%= product.id %>"
+                ><h2 class="dolor_text"><%= product.product_title %></h2>
+                <p class="tempor_text"><%= product.product_description %></p>
+              </a>
+
+              <form action="/cart/add" method="POST" class="text-center">
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= product.id %>"
+                />
+                <button type="submit" class="btn btn-lg cusBuyBtn">
+                  Buy Now
+                </button>
+              </form>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--our burgers section end -->
+
+  <!--choose section start -->
+  <div class="choose_section layout_padding">
+    <div class="container">
+      <div class="image_2">
+        <i class="fa-solid fa-burger"></i>
+      </div>
+      <h1 class="about_taital">Why Choose Us</h1>
+      <div class="image_3">
+        <img class="mycustomAnimat wow animated pulse" src="images/about.png" />
+      </div>
+      <p class="lorem_text">
+        A burger is a delicious sandwich consisting of a grilled patty, usually
+        beef, placed in a bun with toppings like lettuce, cheese, and sauces.
+      </p>
+      <div class="read_bt_1"><a href="#">Get Details</a></div>
+    </div>
+  </div>
+  <!--choose section end -->
+
+  <!--contact section start -->
+  <div class="contact_section layout_padding">
+    <div class="container">
+      <div class="image_2">
+        <i class="fa-solid fa-burger"></i>
+      </div>
+      <h1 class="about_taital">Get in Touch</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mail_sectin">
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Enter Your Name"
+              name="Name"
+            />
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Enter Your Email"
+              name="Name"
+            />
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Enter Your Phone Number"
+              name="Name"
+            />
+            <textarea
+              class="massage-bt"
+              placeholder="Enter Your Massage"
+              rows="5"
+              id="comment"
+              name="Massage"
+            ></textarea>
+            <div class="send_bt"><a href="#">Send</a></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map_main">
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.2386387691345!2d90.37282297451715!3d23.738868089220503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8caa7e60837%3A0xf47efcf6f49b50c5!2sSultan&#39;s%20Dine%20-%20Dhanmondi!5e0!3m2!1sen!2sbd!4v1740072319407!5m2!1sen!2sbd"
+                width="600"
+                height="482"
+                frameborder="2"
+                style="border: 0; width: 100%"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const socket = io();
+      const messagesDiv = document.getElementById("messages");
+
+      function addClassesToMessages() {
+        var messages = messagesDiv.querySelectorAll("p");
+        messages.forEach(function (message, index) {
+          if (index % 2 === 0) {
+            message.classList.add("even");
+            message.classList.remove("odd");
+          } else {
+            message.classList.add("odd");
+            message.classList.remove("even");
+          }
+        });
+      }
+
+      socket.on("message", (message) => {
+        messagesDiv.innerHTML += `<p>${message}</p>`;
+        addClassesToMessages();
+      });
+
+      function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value;
+        socket.emit("message", message);
+        messageInput.value = "";
+      }
+
+      const openChatButton = document.getElementById("openChatButton");
+      const closeChatButton = document.getElementById("closeChatButton");
+      const chatContainer = document.getElementById("chatContainer");
+
+      openChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "block";
+      });
+
+      closeChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "none";
+      });
+
+      const sendMessageButton = document.getElementById("sendMessageButton");
+      sendMessageButton.addEventListener("click", sendMessage);
+    });
+  </script>
+</main>
+<%- include("layouts/footer.ejs") %>
