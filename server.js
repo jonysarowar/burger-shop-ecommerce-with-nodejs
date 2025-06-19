@@ -10,7 +10,8 @@ const socketio = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 // Static files and views
 app.use('/uploads', express.static('uploads'));

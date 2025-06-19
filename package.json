@@ -1,9 +1,10 @@
 {
-  "name": "nodejsecommerce_1280860",
+  "name": "burger-shop-ecommerce-1286765",
   "version": "1.0.0",
   "description": "",
   "main": "index.ejs",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
