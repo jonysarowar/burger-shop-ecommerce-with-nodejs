@@ -15,7 +15,10 @@ const io = socketio(server);
 
 // Static files and views
 app.use('/uploads', express.static('uploads'));
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.set('views', 'views');
 app.use(express.static(path.join(__dirname, "public")));
 
