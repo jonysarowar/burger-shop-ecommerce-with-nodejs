@@ -18,7 +18,6 @@ This is a **simple yet functional e-commerce website** built with `Node.js`, `Ex
 - **Backend:** Node.js, Express.js
 - **Frontend:** Bootstrap, EJS (or any templating engine used)
 - **Additional Packages:** (List any other npm packages used)
-- **Database:** (Mention if any database is used, e.g., MongoDB, MySQL)
 
   ## 📽 Demo Video
 
